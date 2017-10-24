@@ -1,3 +1,8 @@
 <%=render partial: "/pages/nav-bar" %>
 
-<h1>Welcome <%=@user.name%></h1>
+<h1>Welcome <%=@user.username%></h1>
+
+<p>Points available: <%=@user.available_points%></p>
+<p>Points spent: <%=@user.spent_points%></p>
+
+
