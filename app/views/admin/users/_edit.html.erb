@@ -1,0 +1,4 @@
+<%=form_tag(edit_user_path(user), method: :get) do %>
+	<%=text_field_tag 'user[available_points]'%>
+	<%=submit_tag(value = "Add Points")%>
+<%end%>

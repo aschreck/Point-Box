@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
 	has_secure_password
 
+	enum role: ["default", "admin"]
+
 	def add_points(points)
 		self.available_points += points
 	end

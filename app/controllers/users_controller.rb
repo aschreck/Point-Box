@@ -15,7 +15,13 @@ class UsersController < ApplicationController
 			render :new
 		end 
 	end 
-
+	
+	def edit
+		@user = User.find(params[:id])
+		@user.update_attribute(:available_points, params[:user][:available_points])
+		redirect_to admin_users_path
+	end 
+	
 	private
 
 	def user_params
