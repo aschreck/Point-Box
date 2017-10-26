@@ -3,5 +3,5 @@
   <p><%=reward.name%></p>
   <p><%=reward.description%></p>
   <p><%=reward.price%></p>
-	<%= link_to "Purchase", user_path(current_user), method: "patch"%>
+	<%= link_to "Purchase", '/rewards/purchase', method: "patch"%>
   <% end %>

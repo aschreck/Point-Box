@@ -4,7 +4,7 @@ describe "when point methods are called on a user" do
 
 		user.add_points(1000)
 
-		expect(user.available_points).to eq 1000
+		expect(user.available_points).to eq 2000
 	end 
 
 end 

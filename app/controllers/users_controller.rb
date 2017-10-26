@@ -21,7 +21,15 @@ class UsersController < ApplicationController
 		@user.update_attribute(:available_points, params[:user][:available_points])
 		redirect_to admin_users_path
 	end 
-	
+	#feels like bad form—-unsure how to deal with multiple patch requests coming into this controller from admin and from purchase
+	def update
+		@user = User.find(params[:id])
+	end 
+
+	def purchase
+		#this route is laid out in the controller but might not be what I actually want to do. 
+	end 
+
 	private
 
 	def user_params
