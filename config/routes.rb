@@ -7,11 +7,12 @@ Rails.application.routes.draw do
 	post   "/login",          to: "sessions#create"
 	delete "/logout",         to: "sessions#destroy"
 	post   "/users/:id/edit",	to: "users#edit"
-	
+	post   "/rewards/new",    to: "admin/rewards#create"
 	resources :admin, only: [:index]
 	resources :users
-	resources :rewards, only: [:index]
+	resources :rewards, only: [:index, :new, :edit]
 	namespace :admin do 
 		resources :users, only: [:index,:create]
+		resources :rewards
 	end 
 end
