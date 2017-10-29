@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 	resources :rewards, only: [:index, :new, :edit]
 	
 	namespace :admin do 
-		resources :users, only: [:index,:create]
+		resources :users, only: [:index,:create, :destroy]
 		resources :rewards
 	end 
 end

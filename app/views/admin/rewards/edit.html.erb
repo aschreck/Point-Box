@@ -1,5 +1,5 @@
 
-<%= form_for [:admin, @reward] do |f| %>
+<%= form_for [:admin, @reward], :html=> {class: 'form' } do |f| %>
 	<%= f.label      :name %>
 	<%= f.text_field :name %>
 

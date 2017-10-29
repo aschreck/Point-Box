@@ -4,6 +4,13 @@ class Admin::UsersController < Admin::BaseController
 		@users = User.all
 	end 
 
+	def destroy
+		user = User.find(params[:id])
+		user.destroy
+
+		redirect_to admin_users_path
+	end 
+
 	def require_admin
 		render file: "/public/404" unless current_admin?
 	end 

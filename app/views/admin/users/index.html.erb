@@ -1,14 +1,16 @@
+<%= render partial: "admin-nav-bar"%>
+<div class="container">
 <h1>All Users</h1>
 
-<%=link_to "View Rewards", admin_rewards_path%>
-
 <% @users.each do |user|%>
-	<p>
-		<%=user.username%>
-		<%=user.available_points%>
+		<div class="items">
+		<h2><%=user.username%></h2>
+		<p><%=user.available_points%></p>
 		
 		<p>Set New Point Total:</p>
 		<%=render partial: 'edit', locals: {user: user}%> 
-	</p><br />
+		<%=link_to "Delete", admin_user_path%>
+	</div><br />
 
 	<%end%>
+</div>
