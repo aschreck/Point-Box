@@ -1,5 +1,7 @@
 <h1>All Users</h1>
 
+<%=link_to "View Rewards", admin_rewards_path%>
+
 <% @users.each do |user|%>
 	<p>
 		<%=user.username%>

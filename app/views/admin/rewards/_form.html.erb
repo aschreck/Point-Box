@@ -1,8 +1,9 @@
-<%= form_tag(new_reward_path) do %>
-	<%=text_field_tag "reward[name]"%>
-	<%=text_field_tag "reward[description]"%>
-	<%=text_field_tag "reward[price]"%>
-	<%=submit_tag(value = "Create Reward")%>
-<%end%>
-
+<div class="form">
+	<%= form_tag(new_reward_path, class: "form") do %>
+		<%=text_field_tag "reward[name]"%>
+		<%=text_field_tag "reward[description]"%>
+		<%=text_field_tag "reward[price]"%>
+		<%=submit_tag(value = "Create Reward")%>
+	<%end%>
+</div>
 

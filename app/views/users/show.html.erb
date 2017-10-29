@@ -1,8 +1,17 @@
-<%=render partial: "/pages/nav-bar" %>
+<div class="container">
+  <div class="boxed">
+    <h1>Welcome <%=@user.username%></h1>
+      <p>Points available: <%=@user.available_points%></p>
+      <p>Points spent: <%=@user.spent_points%></p>
+  </div>
 
-<h1>Welcome <%=@user.username%></h1>
-
-<p>Points available: <%=@user.available_points%></p>
-<p>Points spent: <%=@user.spent_points%></p>
+	<div class="items">
+  <h1>Rewards: </h1>
+    <%@user.rewards.each do |reward| %>
+      <h3><%=reward.name%></h3>
+      <p><%=reward.description%></p>
+    <%end%>
+	</div>		
+</div>
 
 
