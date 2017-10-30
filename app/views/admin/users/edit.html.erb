@@ -1,0 +1,8 @@
+<%= render partial: "admin-nav-bar"%>
+
+<h3> username, email, password </h3>
+<%=form_tag(user_path(@user), {method: :put, class: "form"}) do %>
+	<%=text_field_tag 'user[username]'%>
+  <%=text_field_tag 'user[email]'%>
+	<%=submit_tag(value = "Edit User")%>
+<%end%>

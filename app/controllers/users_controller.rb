@@ -16,7 +16,6 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			#also want to create a session for the user. 
 			redirect_to "/login"
 		else 
 			render :new
@@ -30,7 +29,9 @@ class UsersController < ApplicationController
 	end 
 
 	def update
-		@user = User.find(params[:id])
+		user = User.find(params[:id])
+		user.update(user_params)
+		redirect_to admin_users_path
 	end 
 
 	private

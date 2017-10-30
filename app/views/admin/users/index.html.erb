@@ -5,11 +5,13 @@
 <% @users.each do |user|%>
 		<div class="items">
 		<h2><%=user.username%></h2>
+		<p> <%=user.email %></p>
 		<p><%=user.available_points%></p>
 		
 		<p>Set New Point Total:</p>
 		<%=render partial: 'edit', locals: {user: user}%> 
-		<%=link_to "Delete", admin_user_path%>
+		<%=link_to "Edit", edit_admin_user_path(user) %>
+		<%=link_to "Delete", admin_user_path(user), method: "delete"%>
 	</div><br />
 
 	<%end%>

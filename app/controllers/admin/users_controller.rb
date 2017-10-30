@@ -4,6 +4,16 @@ class Admin::UsersController < Admin::BaseController
 		@users = User.all
 	end 
 
+	def edit
+		@user = User.find(params[:id])
+	end 
+
+	def update
+		user = User.find(params[:id])
+		user.update(user_params)
+		redirect_to admin_users_path
+	end 
+
 	def destroy
 		user = User.find(params[:id])
 		user.destroy
@@ -13,6 +23,12 @@ class Admin::UsersController < Admin::BaseController
 
 	def require_admin
 		render file: "/public/404" unless current_admin?
+	end 
+
+	private 
+
+	def user_params
+		params.require(:user).permit(:username, :email, :password)
 	end 
 
 end 
