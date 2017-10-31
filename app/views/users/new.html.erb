@@ -1,5 +1,6 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<%=render partial: "pages/anonymous-nav-bar" %>
+
+<div class="form">
     <%= form_for(@user) do |f| %>
       <%= f.label :username %>
       <%= f.text_field :username %>
@@ -13,7 +14,6 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "Create my account"%>
     <% end %>
-  </div>
 </div>

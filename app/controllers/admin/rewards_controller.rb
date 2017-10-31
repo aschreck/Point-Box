@@ -7,7 +7,7 @@ class Admin::RewardsController < Admin::BaseController
 
 	def create
 		@reward = Reward.create(reward_params)
-		redirect_to admin_users_path
+		redirect_to admin_rewards_path
 	end 
 
 	def edit
